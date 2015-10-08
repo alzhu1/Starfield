@@ -3,7 +3,6 @@ Particle[] bobby;
 double starX, starY;
 public void setup()
 {
-	//your code here
 	size(500,500);
 	bobby = new Particle[200];
 	for(int i=0; i<bobby.length; i++)
