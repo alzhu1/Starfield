@@ -44,15 +44,11 @@ public void draw()
 			{
 				((OddballParticle)bobby[j]).dX=starX;
 				((OddballParticle)bobby[j]).dY=starY;
-				((OddballParticle)bobby[j]).dTheta = Math.random()*PI*2;
-				((OddballParticle)bobby[j]).dSpeed = Math.random()*10+1;
 			}
 			if(((OddballParticle)bobby[j]).dY>500 || ((OddballParticle)bobby[j]).dY<0)
 			{
 				((OddballParticle)bobby[j]).dX=starX;
 				((OddballParticle)bobby[j]).dY=starY;
-				((OddballParticle)bobby[j]).dTheta = Math.random()*PI*2;
-				((OddballParticle)bobby[j]).dSpeed = Math.random()*10+1;
 			}
 		}
 		if(j==1)
@@ -104,15 +100,20 @@ interface Particle
 	public void move();
 	public void show();
 }
-class OddballParticle extends NormalParticle//uses an interface
+class OddballParticle implements Particle//uses an interface
 {
+	double dX, dY;
+	int nColor;
 	public OddballParticle()
 	{
 		dX = 250;
 		dY = 250;
-		dTheta = Math.random()*PI*2;
-		dSpeed = Math.random()*5+1;
 		nColor = color((int)(Math.random()*255)+1,(int)(Math.random()*255)+1,(int)(Math.random()*255)+1);
+	}
+	public void move()
+	{
+		dX = dX+((int)(Math.random()*11))-5;
+		dY = dX+((int)(Math.random()*11))-5;
 	}
 	public void show()
 	{
