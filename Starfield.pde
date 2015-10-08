@@ -105,7 +105,7 @@ interface Particle
 	public void move();
 	public void show();
 }
-class OddballParticle extends Particle//uses an interface
+class OddballParticle extends NormalParticle//uses an interface
 {
 	public OddballParticle()
 	{
@@ -121,7 +121,7 @@ class OddballParticle extends Particle//uses an interface
 		ellipse((float)dX,(float)dY,20,20);
 	}
 }
-class JumboParticle extends Particle//uses inheritance
+class JumboParticle extends NormalParticle//uses inheritance
 {
 	public JumboParticle()
 	{
