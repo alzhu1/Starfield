@@ -105,11 +105,8 @@ interface Particle
 	public void move();
 	public void show();
 }
-class OddballParticle implements Particle//uses an interface
+class OddballParticle extends Particle//uses an interface
 {
-	//your code here
-	double dX, dY, dTheta, dSpeed;
-	int nColor;
 	public OddballParticle()
 	{
 		dX = 250;
@@ -118,22 +115,14 @@ class OddballParticle implements Particle//uses an interface
 		dSpeed = Math.random()*5+1;
 		nColor = color((int)(Math.random()*255)+1,(int)(Math.random()*255)+1,(int)(Math.random()*255)+1);
 	}
-	public void move()
-	{
-		dX = dX+Math.cos(dTheta)*dSpeed;
-		dY = dY+Math.sin(dTheta)*dSpeed;
-	}
-	void show()
+	public void show()
 	{
 		fill(nColor);
 		ellipse((float)dX,(float)dY,20,20);
 	}
 }
-class JumboParticle implements Particle//uses inheritance
+class JumboParticle extends Particle//uses inheritance
 {
-	//your code here
-	double dX, dY, dTheta, dSpeed;
-	int nColor;
 	public JumboParticle()
 	{
 		dX = 250;
@@ -142,12 +131,7 @@ class JumboParticle implements Particle//uses inheritance
 		dSpeed = Math.random()+1;
 		nColor = color((int)(Math.random()*255)+1,(int)(Math.random()*255)+1,(int)(Math.random()*255)+1);
 	}
-	public void move()
-	{
-		dX = dX+Math.cos(dTheta)*dSpeed;
-		dY = dY+Math.sin(dTheta)*dSpeed;
-	}
-	void show()
+	public void show()
 	{
 		fill(nColor);
 		ellipse((float)dX,(float)dY,100,100);
